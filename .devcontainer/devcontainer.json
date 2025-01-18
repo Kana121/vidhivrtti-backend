@@ -1,0 +1,28 @@
+{
+    "name": "Spring Boot Codespace",
+    "image": "mcr.microsoft.com/devcontainers/java:17",
+    "features": {
+      "docker-in-docker": {
+        "version": "latest"
+      }
+    },
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "vscjava.vscode-java-pack",
+          "pivotal.vscode-spring-boot",
+          "redhat.java",
+          "editorconfig.editorconfig",
+          "esbenp.prettier-vscode"
+        ]
+      }
+    },
+    "postCreateCommand": "./mvnw clean install",
+    "portsAttributes": {
+      "8080": {
+        "label": "Spring Boot App",
+        "onAutoForward": "openBrowser"
+      }
+    }
+  }
+  
