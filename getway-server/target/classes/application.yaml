@@ -1,0 +1,15 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: welcome-api
+          uri: lb://USER-MS
+          predicates:
+            - Path=/api/user/**
